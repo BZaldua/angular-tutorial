@@ -1,0 +1,22 @@
+<h2>Simple form</h2>
+<form [formGroup]="signupForm" (ngSubmit)="send(signupForm.value)">
+    <label>Name: </label>
+    <input formControlName="name" type="text"/>
+    <br/>
+
+    <label>User: </label>
+    <input formControlName="user" type="text"/>
+    <br/>
+
+    <label>Email: </label>
+    <input formControlName="email" type="email"/>
+    <div *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched">Please, check that an email was provided</div>
+    <br/>
+
+    <label>Password: </label>
+    <input formControlName="password" type="password"/>
+    <br/>
+
+    <button [disabled]="signupForm.invalid" type="submit">Submit</button>
+
+</form>
