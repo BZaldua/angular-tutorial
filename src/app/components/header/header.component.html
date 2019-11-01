@@ -1,0 +1,18 @@
+<h4>Change name</h4>
+<div>{{ name }}</div>
+<button (click)="changeName()">Change name</button>
+
+<br>
+<br>
+
+<h4>Counter</h4>
+<div>{{ counter }}</div>
+<button (click)="sum()">+1</button>
+
+<br>
+<br>
+<h4>Arrays</h4>
+<ul>
+    <li *ngFor="let number of arr"> {{ number }}</li>
+</ul>
+<button (click)="addElement()">Add element</button>
