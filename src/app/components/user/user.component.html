@@ -1,0 +1,35 @@
+<!-- 
+    ng-container creates a container but does not create any
+    kind of <div> in code. Moreover, only if ngIf condition
+    is fulfilled will show the code inside it.
+    There's an else condition that is refearing to the template
+    below.
+-->
+
+<ng-container *ngIf="!isLogged; else logged">
+    <button (click)="isLogged = true">Login</button>
+    <br>
+
+    <button>Sign up</button>
+    <br>
+</ng-container>
+
+<!-- 
+    Definition of a template with a name that will be shown
+    when some certain condition happens. In this case when
+    the user is logged (being checked in the code above ngIf)
+-->
+<ng-template #logged>
+    <b>Actual user level:</b>
+    <div>{{ level }}</div>
+    <button>Settings</button>
+    <br>
+    <button>Profile</button>
+    <br>
+    <button (click)="level = level + 1">Upgrade user</button>
+    <br>
+    <button (click)="isLogged = false">Logout</button>
+    <br>
+</ng-template>
+
+<button *ngIf="level >= 10" (click)='showMessage()'>Super button</button>
