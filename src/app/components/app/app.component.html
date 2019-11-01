@@ -14,3 +14,28 @@
 
 <hr>
 <app-form></app-form>
+
+<hr>
+<h3>Create a directive</h3>
+<span myDirective color="green" underline="true"> {{ title }} </span>
+
+<hr>
+<h3>Paginator</h3>
+<mat-paginator [length]="inputData.length" 
+    [pageSize]="page_size" 
+    [pageSizeOptions]="pageSizeOptions" 
+    (page)="handlePage($event)">
+</mat-paginator>
+
+<ul>
+    <li *ngFor="let user of inputData | paginate:page_size:page_number">
+        <ul>
+            <li *ngFor="let prop of user | keyvalue">
+                {{ prop.key }}: {{ prop.value }}
+            </li>
+        </ul>
+    </li>
+    <br>
+    <br>
+</ul>
+{{data | json}}

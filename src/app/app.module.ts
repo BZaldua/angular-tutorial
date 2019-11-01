@@ -8,6 +8,10 @@ import { Part5Component } from './components/part5/part5.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './components/form/form.component';
+import { MyDirectiveDirective } from './directives/my-directive.directive';
+import { PaginatePipe } from './pipes/paginate.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -16,12 +20,16 @@ import { FormComponent } from './components/form/form.component';
     Part5Component,
     LoginComponent,
     FormComponent,
+    MyDirectiveDirective,
+    PaginatePipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
