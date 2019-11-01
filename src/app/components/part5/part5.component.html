@@ -1,0 +1,21 @@
+<!--
+    () -> used to listen to the event. The same as HTML but without "on"
+    [] -> to add an attribute to the element
+-->
+<button (click)="changeStatus(false)" *ngIf="disableStatus">Enable</button>
+<button (click)="changeStatus(true)" *ngIf="!disableStatus">Disable</button>
+<br>
+<button [disabled]="disableStatus" [type]= "buttonType" (click)="changeType()">Change button type</button>
+
+<br>
+<br>
+<h3>Create a Form</h3>
+<!--
+    [()] -> event and attribute that can be catched in another place.
+-->
+<input type="text" [(ngModel)]='formInput' (ngModelChange)="log($event)">
+<p><b>Your name is:</b> {{ formInput }}</p>
+<p><b>You picked:</b> {{ inputSelection}}</p>
+<select [(ngModel)]="inputSelection">
+    <option *ngFor="let inputOption of optionsArray" value="{{inputOption}}">{{ inputOption }}</option>
+</select>
