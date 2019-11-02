@@ -12,6 +12,10 @@ import { MyDirectiveDirective } from './directives/my-directive.directive';
 import { PaginatePipe } from './pipes/paginate.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FilmsComponent } from './components/films/films.component';
+import { UppercasePipe } from './pipes/uppercase.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FormComponent,
     MyDirectiveDirective,
     PaginatePipe,
+    FilmsComponent,
+    UppercasePipe,
+    SortPipe,
+    SortByPipe,
   ],
   imports: [
     BrowserModule,

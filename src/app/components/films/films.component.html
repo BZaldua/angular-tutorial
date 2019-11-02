@@ -1,0 +1,14 @@
+<h3>Pipes</h3>
+
+<h4>Simple pipe: (uppercase)</h4>
+<div>{{filmList[0].title | uppercase}}</div>
+
+<h4>Normal pipe: (sort)</h4>
+<ul>
+    <li *ngFor="let film of filmList | sort">ID: {{film.id}}, Title: {{film.title}}, Price: {{film.price}}</li>
+</ul>
+
+<h4>Complete pipe (sort with parameters)</h4>
+<ul>
+    <li *ngFor="let film of filmList | sortBy:false">ID: {{film.id}}, Title: {{film.title}}, Price: {{film.price}}</li>
+</ul>
